@@ -1,0 +1,543 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.8.27">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+
+<title>preza7</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+</style>
+
+
+<script src="preza7_files/libs/clipboard/clipboard.min.js"></script>
+<script src="preza7_files/libs/quarto-html/quarto.js" type="module"></script>
+<script src="preza7_files/libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="preza7_files/libs/quarto-html/axe/axe-check.js" type="module"></script>
+<script src="preza7_files/libs/quarto-html/popper.min.js"></script>
+<script src="preza7_files/libs/quarto-html/tippy.umd.min.js"></script>
+<script src="preza7_files/libs/quarto-html/anchor.min.js"></script>
+<link href="preza7_files/libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="preza7_files/libs/quarto-html/quarto-syntax-highlighting-ed96de9b727972fe78a7b5d16c58bf87.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="preza7_files/libs/bootstrap/bootstrap.min.js"></script>
+<link href="preza7_files/libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="preza7_files/libs/bootstrap/bootstrap-9e3ffae467580fdb927a41352e75a2e0.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+
+
+</head>
+
+<body class="fullcontent quarto-light">
+
+<div id="quarto-content" class="page-columns page-rows-contents page-layout-article">
+
+<main class="content" id="quarto-document-content">
+
+
+
+
+<section id="настройка-рабочей-среды" class="level1">
+<h1>Настройка рабочей среды</h1>
+<p>Автор: Матафонова Таисия Антоновнв Преподаватель: Кулябов Дмитрий Сергеевич профессор * профессор кафедры теории вероятностей и кибербезопасности * Российский университет дружбы народов им. П. Лумумбы * <a href="mailto:kulyabov-ds@rudn.ru">kulyabov-ds@rudn.ru</a> * <a href="https://yamadharma.github.io/ru/" class="uri">https://yamadharma.github.io/ru/</a></p>
+<p><strong>Информация о докладчике</strong></p>
+<p>Студентка НБИбд-01-25</p>
+<hr>
+</section>
+<section id="цель-работы" class="level1">
+<h1>Цель работы</h1>
+<p>Ознакомление с файловой системой Linux, её структурой, именами и содержанием каталогов. Приобретение практических навыков по применению команд для работы с файлами и каталогами, управлению процессами, проверке использования диска и обслуживанию файловой системы.</p>
+<hr>
+</section>
+<section id="выполнение-лабораторной-работы" class="level1">
+<h1>Выполнение лабораторной работы</h1>
+<p>1.Я создала пустой файл <code>abc1</code> с помощью команды <code>touch abc1</code>. Затем я просмотрела его содержимое командой <code>cat abc1</code> — файл оказался пустым, что ожидаемо. После этого я открыла системный файл <code>/etc/passwd</code> для постраничного просмотра с помощью <code>less /etc/passwd</code>. Для выхода из режима просмотра я нажала клавишу <code>q</code>. Далее я вывела первые пять строк этого файла командой <code>head -5 /etc/passwd</code> и последние три строки командой <code>tail -3 /etc/passwd</code>. Таким образом я познакомилась с основными командами для просмотра текстовых файлов.</p>
+<div id="fig:001" class="quarto-figure quarto-figure-center anchored">
+<figure class="figure">
+<p><img src="71.png" class="img-fluid figure-img"></p>
+<figcaption>Работа с текстовыми файлами</figcaption>
+</figure>
+</div>
+<hr>
+<p>2.Я скопировала файл <code>abc1</code> в два новых файла — <code>april</code> и <code>may</code> — с помощью команд <code>cp abc1 april</code> и <code>cp abc1 may</code>. Затем я создала каталог <code>monthly</code> командой <code>mkdir monthly</code> и скопировала в него оба файла: <code>cp april may monthly</code>. После этого я скопировала файл <code>may</code> внутри каталога <code>monthly</code> в новый файл <code>june</code> командой <code>cp monthly/may monthly/june</code>. Для проверки я выполнила <code>ls monthly</code> и увидела файлы <code>april</code>, <code>june</code>, <code>may</code>. Далее я использовала рекурсивное копирование: <code>cp -r monthly monthly.00</code> — это позволило скопировать каталог вместе со всем содержимым. Затем я скопировала этот каталог в <code>/tmp</code> командой <code>cp -r monthly.00 /tmp</code></p>
+<div id="fig:002" class="quarto-figure quarto-figure-center anchored">
+<figure class="figure">
+<p><img src="72.png" class="img-fluid figure-img"></p>
+<figcaption>Копирование файлов и каталогов</figcaption>
+</figure>
+</div>
+<hr>
+<p>3.Я переименовала файл <code>april</code> в <code>july</code> командой <code>mv april july</code>. Затем я создала каталог <code>monthly.00</code> и переместила в него файл <code>july</code> командой <code>mv july monthly.00</code>. После этого я переименовала каталог <code>monthly.00</code> в <code>monthly.01</code> командой <code>mv monthly.00 monthly.01</code>. Далее я создала каталог <code>reports</code> командой <code>mkdir reports</code> и переместила в него <code>monthly.01</code> командой <code>mv monthly.01 reports</code>. Затем я переименовала его обратно в <code>monthly</code> командой <code>mv reports/monthly.01 reports/monthly</code>. Все эти действия показали, что команда <code>mv</code> позволяет как переименовывать, так и перемещать файлы и каталоги.</p>
+<div id="fig:003" class="quarto-figure quarto-figure-center anchored">
+<figure class="figure">
+<p><img src="73.png" class="img-fluid figure-img"></p>
+<figcaption>Перемещение и переименование</figcaption>
+</figure>
+</div>
+<hr>
+<p>4.Я создала файл <code>may</code> командой <code>touch may</code> и посмотрела его права через <code>ls -l may</code>. Затем я добавила владельцу право на выполнение командой <code>chmod u+x may</code> и снова проверила права — появилась буква <code>x</code>. После этого я убрала это право командой <code>chmod u-x may</code> и убедилась, что права вернулись к исходным. Далее я создала каталог <code>monthly</code> и лишила группу и остальных пользователей права на чтение командой <code>chmod g-r,o-r monthly</code>. Затем я создала файл <code>abc1</code> и добавила группе право на запись командой <code>chmod g+w abc1</code>. Таким образом я научилась изменять права доступа как в символьном, так и в числовом формате.</p>
+<div id="fig:004" class="quarto-figure quarto-figure-center anchored">
+<figure class="figure">
+<p><img src="74.png" class="img-fluid figure-img"></p>
+<figcaption>Права доступа</figcaption>
+</figure>
+</div>
+<hr>
+<p>5.Я скопировала файл <code>/usr/include/sys/types.h</code> в домашний каталог под именем <code>equipment</code> командой <code>cp /usr/include/sys/types.h equipment</code>. Затем я создала каталог <code>~/ski.plases</code> командой <code>mkdir ~/ski.plases</code> и переместила в него файл <code>equipment</code> командой <code>mv equipment ~/ski.plases/</code>. После этого я переименовала его в <code>equiplist</code> командой <code>mv ~/ski.plases/equipment ~/ski.plases/equiplist</code>. Далее я создала файл <code>abc1</code> командой <code>touch ~/abc1</code> и скопировала его в каталог <code>~/ski.plases</code> под именем <code>equiplist2</code> командой <code>cp ~/abc1 ~/ski.plases/equiplist2</code>. Затем я создала внутри <code>~/ski.plases</code> каталог <code>equipment</code> командой <code>mkdir ~/ski.plases/equipment</code> и переместила в него оба файла — <code>equiplist</code> и <code>equiplist2</code> — одной командой <code>mv ~/ski.plases/equiplist ~/ski.plases/equiplist2 ~/ski.plases/equipment/</code>. В конце я создала каталог <code>newdir</code> и переместила его в <code>~/ski.plases</code>, переименовав в <code>plans</code>, командой <code>mkdir ~/newdir</code> и <code>mv ~/newdir ~/ski.plases/plans</code>. Проверка через <code>ls -la ~/ski.plases/</code>, <code>ls -la ~/ski.plases/equipment/</code> и <code>ls -la ~/ski.plases/plans/</code> подтвердила правильность выполнения.</p>
+<div id="fig:005" class="quarto-figure quarto-figure-center anchored">
+<figure class="figure">
+<p><img src="75.png" class="img-fluid figure-img"></p>
+<figcaption>Основное задание: создание иерархии ski.plases</figcaption>
+</figure>
+</div>
+<hr>
+<p>6.Я создала каталог <code>australia</code> командой <code>mkdir australia</code> и присвоила ему права <code>744</code> (что соответствует <code>drwxr--r--</code>) командой <code>chmod 744 australia</code>, после чего проверила результат через <code>ls -ld australia</code>. Затем я создала каталог <code>play</code> командой <code>mkdir play</code> и присвоила ему права <code>711</code> (что соответствует <code>drwx--x--x</code>) командой <code>chmod 711 play</code>, проверила через <code>ls -ld play</code>. Далее я создала файл <code>my_os</code> командой <code>touch my_os</code> и присвоила ему права <code>544</code> (что соответствует <code>-r-xr--r--</code>) командой <code>chmod 544 my_os</code>, проверила через <code>ls -l my_os</code>. В конце я создала файл <code>feathers</code> командой <code>touch feathers</code> и присвоила ему права <code>664</code> (что соответствует <code>-rw-rw-r--</code>) командой <code>chmod 664 feathers</code>, проверила через <code>ls -l feathers</code>.</p>
+<div id="fig:006" class="quarto-figure quarto-figure-center anchored">
+<figure class="figure">
+<p><img src="76.png" class="img-fluid figure-img"></p>
+<figcaption>Права доступа по заданию</figcaption>
+</figure>
+</div>
+<hr>
+<p>7.Я скопировала файл <code>feathers</code> в <code>file.old</code> командой <code>cp ~/feathers ~/file.old</code>. Затем я переместила <code>file.old</code> в каталог <code>play</code> командой <code>mv ~/file.old ~/play/</code>. Далее я скопировала каталог <code>play</code> в <code>fun</code> рекурсивно командой <code>cp -r ~/play ~/fun</code>. После этого я переместила <code>fun</code> внутрь <code>play</code> и переименовала в <code>games</code> командой <code>mv ~/fun ~/play/games</code>. Затем я лишила владельца файла <code>feathers</code> права на чтение командой <code>chmod u-r ~/feathers</code> и проверила права через <code>ls -l ~/feathers</code>. При попытке просмотреть файл командой <code>cat ~/feathers</code> я получила ошибку <code>Permission denied</code>. При попытке скопировать файл командой <code>cp ~/feathers ~/feathers_copy</code> также возникла ошибка. После этого я вернула владельцу право на чтение командой <code>chmod u+r ~/feathers</code> и снова проверила права — они восстановились.</p>
+<div id="fig:007" class="quarto-figure quarto-figure-center anchored">
+<figure class="figure">
+<p><img src="77.png" class="img-fluid figure-img"></p>
+<figcaption>Упражнения</figcaption>
+</figure>
+</div>
+<hr>
+<p>8.Я лишила владельца каталога <code>play</code> права на выполнение командой <code>chmod u-x ~/play</code> и проверила права через <code>ls -ld ~/play</code>. При попытке перейти в этот каталог командой <code>cd ~/play</code> я получила ошибку <code>Permission denied</code>. Затем я вернула владельцу право на выполнение командой <code>chmod u+x ~/play</code> и снова проверила права, после чего успешно вошла в каталог командой <code>cd ~/play</code> и выполнила <code>pwd</code> для подтверждения. После этого я изучила команды <code>mount</code>, <code>fsck</code>, <code>mkfs</code> и <code>kill</code> с помощью команд <code>man mount | head -20</code>, <code>man fsck | head -20</code>, <code>man mkfs | head -20</code> и <code>man kill | head -20</code>. Каждая из этих команд была кратко охарактеризована.</p>
+<div id="fig:008" class="quarto-figure quarto-figure-center anchored">
+<figure class="figure">
+<p><img src="78.png" class="img-fluid figure-img"></p>
+<figcaption>Упражнения</figcaption>
+</figure>
+</div>
+<hr>
+</section>
+<section id="список-литературы" class="level1">
+<h1>Список литературы</h1>
+<p>ТУИС. Архитектура компьютеров и операционные системы. Раздел “Операционные системы”. Лабораторная работа №6.</p>
+<p><a href="https://esystem.rudn.ru/mod/page/view.php?id=1358330" class="uri">https://esystem.rudn.ru/mod/page/view.php?id=1358330</a></p>
+</section>
+
+</main>
+<!-- /main column -->
+<script id="quarto-html-after-body" type="application/javascript">
+  window.document.addEventListener("DOMContentLoaded", function (event) {
+    const icon = "";
+    const anchorJS = new window.AnchorJS();
+    anchorJS.options = {
+      placement: 'right',
+      icon: icon
+    };
+    anchorJS.add('.anchored');
+    const isCodeAnnotation = (el) => {
+      for (const clz of el.classList) {
+        if (clz.startsWith('code-annotation-')) {                     
+          return true;
+        }
+      }
+      return false;
+    }
+    const onCopySuccess = function(e) {
+      // button target
+      const button = e.trigger;
+      // don't keep focus
+      button.blur();
+      // flash "checked"
+      button.classList.add('code-copy-button-checked');
+      var currentTitle = button.getAttribute("title");
+      button.setAttribute("title", "Copied!");
+      let tooltip;
+      if (window.bootstrap) {
+        button.setAttribute("data-bs-toggle", "tooltip");
+        button.setAttribute("data-bs-placement", "left");
+        button.setAttribute("data-bs-title", "Copied!");
+        tooltip = new bootstrap.Tooltip(button, 
+          { trigger: "manual", 
+            customClass: "code-copy-button-tooltip",
+            offset: [0, -8]});
+        tooltip.show();    
+      }
+      setTimeout(function() {
+        if (tooltip) {
+          tooltip.hide();
+          button.removeAttribute("data-bs-title");
+          button.removeAttribute("data-bs-toggle");
+          button.removeAttribute("data-bs-placement");
+        }
+        button.setAttribute("title", currentTitle);
+        button.classList.remove('code-copy-button-checked');
+      }, 1000);
+      // clear code selection
+      e.clearSelection();
+    }
+    const getTextToCopy = function(trigger) {
+      const outerScaffold = trigger.parentElement.cloneNode(true);
+      const codeEl = outerScaffold.querySelector('code');
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+    }
+    const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+      text: getTextToCopy
+    });
+    clipboard.on('success', onCopySuccess);
+    if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+      const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+        text: getTextToCopy,
+        container: window.document.getElementById('quarto-embedded-source-code-modal')
+      });
+      clipboardModal.on('success', onCopySuccess);
+    }
+      var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+      var mailtoRegex = new RegExp(/^mailto:/);
+        var filterRegex = new RegExp('/' + window.location.host + '/');
+      var isInternal = (href) => {
+          return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+      }
+      // Inspect non-navigation links and adorn them if external
+     var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+      for (var i=0; i<links.length; i++) {
+        const link = links[i];
+        if (!isInternal(link.href)) {
+          // undo the damage that might have been done by quarto-nav.js in the case of
+          // links that we want to consider external
+          if (link.dataset.originalHref !== undefined) {
+            link.href = link.dataset.originalHref;
+          }
+        }
+      }
+    function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+      const config = {
+        allowHTML: true,
+        maxWidth: 500,
+        delay: 100,
+        arrow: false,
+        appendTo: function(el) {
+            return el.parentElement;
+        },
+        interactive: true,
+        interactiveBorder: 10,
+        theme: 'quarto',
+        placement: 'bottom-start',
+      };
+      if (contentFn) {
+        config.content = contentFn;
+      }
+      if (onTriggerFn) {
+        config.onTrigger = onTriggerFn;
+      }
+      if (onUntriggerFn) {
+        config.onUntrigger = onUntriggerFn;
+      }
+      window.tippy(el, config); 
+    }
+    const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+    for (var i=0; i<noterefs.length; i++) {
+      const ref = noterefs[i];
+      tippyHover(ref, function() {
+        // use id or data attribute instead here
+        let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+        try { href = new URL(href).hash; } catch {}
+        const id = href.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note) {
+          return note.innerHTML;
+        } else {
+          return "";
+        }
+      });
+    }
+    const xrefs = window.document.querySelectorAll('a.quarto-xref');
+    const processXRef = (id, note) => {
+      // Strip column container classes
+      const stripColumnClz = (el) => {
+        el.classList.remove("page-full", "page-columns");
+        if (el.children) {
+          for (const child of el.children) {
+            stripColumnClz(child);
+          }
+        }
+      }
+      stripColumnClz(note)
+      if (id === null || id.startsWith('sec-')) {
+        // Special case sections, only their first couple elements
+        const container = document.createElement("div");
+        if (note.children && note.children.length > 2) {
+          container.appendChild(note.children[0].cloneNode(true));
+          for (let i = 1; i < note.children.length; i++) {
+            const child = note.children[i];
+            if (child.tagName === "P" && child.innerText === "") {
+              continue;
+            } else {
+              container.appendChild(child.cloneNode(true));
+              break;
+            }
+          }
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(container);
+          }
+          return container.innerHTML
+        } else {
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(note);
+          }
+          return note.innerHTML;
+        }
+      } else {
+        // Remove any anchor links if they are present
+        const anchorLink = note.querySelector('a.anchorjs-link');
+        if (anchorLink) {
+          anchorLink.remove();
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        if (note.classList.contains("callout")) {
+          return note.outerHTML;
+        } else {
+          return note.innerHTML;
+        }
+      }
+    }
+    for (var i=0; i<xrefs.length; i++) {
+      const xref = xrefs[i];
+      tippyHover(xref, undefined, function(instance) {
+        instance.disable();
+        let url = xref.getAttribute('href');
+        let hash = undefined; 
+        if (url.startsWith('#')) {
+          hash = url;
+        } else {
+          try { hash = new URL(url).hash; } catch {}
+        }
+        if (hash) {
+          const id = hash.replace(/^#\/?/, "");
+          const note = window.document.getElementById(id);
+          if (note !== null) {
+            try {
+              const html = processXRef(id, note.cloneNode(true));
+              instance.setContent(html);
+            } finally {
+              instance.enable();
+              instance.show();
+            }
+          } else {
+            // See if we can fetch this
+            fetch(url.split('#')[0])
+            .then(res => res.text())
+            .then(html => {
+              const parser = new DOMParser();
+              const htmlDoc = parser.parseFromString(html, "text/html");
+              const note = htmlDoc.getElementById(id);
+              if (note !== null) {
+                const html = processXRef(id, note);
+                instance.setContent(html);
+              } 
+            }).finally(() => {
+              instance.enable();
+              instance.show();
+            });
+          }
+        } else {
+          // See if we can fetch a full url (with no hash to target)
+          // This is a special case and we should probably do some content thinning / targeting
+          fetch(url)
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.querySelector('main.content');
+            if (note !== null) {
+              // This should only happen for chapter cross references
+              // (since there is no id in the URL)
+              // remove the first header
+              if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+                note.children[0].remove();
+              }
+              const html = processXRef(null, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      }, function(instance) {
+      });
+    }
+        let selectedAnnoteEl;
+        const selectorForAnnotation = ( cell, annotation) => {
+          let cellAttr = 'data-code-cell="' + cell + '"';
+          let lineAttr = 'data-code-annotation="' +  annotation + '"';
+          const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+          return selector;
+        }
+        const selectCodeLines = (annoteEl) => {
+          const doc = window.document;
+          const targetCell = annoteEl.getAttribute("data-target-cell");
+          const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+          const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+          const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+          const lineIds = lines.map((line) => {
+            return targetCell + "-" + line;
+          })
+          let top = null;
+          let height = null;
+          let parent = null;
+          if (lineIds.length > 0) {
+              //compute the position of the single el (top and bottom and make a div)
+              const el = window.document.getElementById(lineIds[0]);
+              top = el.offsetTop;
+              height = el.offsetHeight;
+              parent = el.parentElement.parentElement;
+            if (lineIds.length > 1) {
+              const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+              const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+              height = bottom - top;
+            }
+            if (top !== null && height !== null && parent !== null) {
+              // cook up a div (if necessary) and position it 
+              let div = window.document.getElementById("code-annotation-line-highlight");
+              if (div === null) {
+                div = window.document.createElement("div");
+                div.setAttribute("id", "code-annotation-line-highlight");
+                div.style.position = 'absolute';
+                parent.appendChild(div);
+              }
+              div.style.top = top - 2 + "px";
+              div.style.height = height + 4 + "px";
+              div.style.left = 0;
+              let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+              if (gutterDiv === null) {
+                gutterDiv = window.document.createElement("div");
+                gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+                gutterDiv.style.position = 'absolute';
+                const codeCell = window.document.getElementById(targetCell);
+                const gutter = codeCell.querySelector('.code-annotation-gutter');
+                gutter.appendChild(gutterDiv);
+              }
+              gutterDiv.style.top = top - 2 + "px";
+              gutterDiv.style.height = height + 4 + "px";
+            }
+            selectedAnnoteEl = annoteEl;
+          }
+        };
+        const unselectCodeLines = () => {
+          const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+          elementsIds.forEach((elId) => {
+            const div = window.document.getElementById(elId);
+            if (div) {
+              div.remove();
+            }
+          });
+          selectedAnnoteEl = undefined;
+        };
+          // Handle positioning of the toggle
+      window.addEventListener(
+        "resize",
+        throttle(() => {
+          elRect = undefined;
+          if (selectedAnnoteEl) {
+            selectCodeLines(selectedAnnoteEl);
+          }
+        }, 10)
+      );
+      function throttle(fn, ms) {
+      let throttle = false;
+      let timer;
+        return (...args) => {
+          if(!throttle) { // first call gets through
+              fn.apply(this, args);
+              throttle = true;
+          } else { // all the others get throttled
+              if(timer) clearTimeout(timer); // cancel #2
+              timer = setTimeout(() => {
+                fn.apply(this, args);
+                timer = throttle = false;
+              }, ms);
+          }
+        };
+      }
+        // Attach click handler to the DT
+        const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+        for (const annoteDlNode of annoteDls) {
+          annoteDlNode.addEventListener('click', (event) => {
+            const clickedEl = event.target;
+            if (clickedEl !== selectedAnnoteEl) {
+              unselectCodeLines();
+              const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+              if (activeEl) {
+                activeEl.classList.remove('code-annotation-active');
+              }
+              selectCodeLines(clickedEl);
+              clickedEl.classList.add('code-annotation-active');
+            } else {
+              // Unselect the line
+              unselectCodeLines();
+              clickedEl.classList.remove('code-annotation-active');
+            }
+          });
+        }
+    const findCites = (el) => {
+      const parentEl = el.parentElement;
+      if (parentEl) {
+        const cites = parentEl.dataset.cites;
+        if (cites) {
+          return {
+            el,
+            cites: cites.split(' ')
+          };
+        } else {
+          return findCites(el.parentElement)
+        }
+      } else {
+        return undefined;
+      }
+    };
+    var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+    for (var i=0; i<bibliorefs.length; i++) {
+      const ref = bibliorefs[i];
+      const citeInfo = findCites(ref);
+      if (citeInfo) {
+        tippyHover(citeInfo.el, function() {
+          var popup = window.document.createElement('div');
+          citeInfo.cites.forEach(function(cite) {
+            var citeDiv = window.document.createElement('div');
+            citeDiv.classList.add('hanging-indent');
+            citeDiv.classList.add('csl-entry');
+            var biblioDiv = window.document.getElementById('ref-' + cite);
+            if (biblioDiv) {
+              citeDiv.innerHTML = biblioDiv.innerHTML;
+            }
+            popup.appendChild(citeDiv);
+          });
+          return popup.innerHTML;
+        });
+      }
+    }
+  });
+  </script>
+</div> <!-- /content -->
+
+
+
+
+</body></html>
